@@ -1,0 +1,19 @@
+column,type,definition,source
+stadtteil_nr,int,Official Stadtteil number (no 15 and 23: Flughafen is merged into 14; 23 does not exist),S1
+stadtteil,str,Name as in city statistics,S1
+ortsbezirk,str,Local council district,S1
+include,Y/N,Included in screening,team decision
+area_km2,float,Total area 2025 (ALKIS) — use this for densities,S4
+residential_area_km2,float,"Wohnbaufläche + Mischnutzung mit Wohnen, 2025",S4
+commercial_mixed_area_km2,float,"Handel/Dienstleistung + Industrie/Gewerbe + übrige I&G + übrige gemischte Nutzung, 2025",S4
+other_builtup_area_km2,float,"Öffentliche Zwecke + bes. funktionale Prägung + Versorgung + Entsorgung + Parken, 2025",S4
+population_2024,int,Residents 31.12.2024 (Melderegister),S2
+households_2024,int,Households 31.12.2024 (sum of 5 types),S3
+residential_buildings_2020,int,Wohngebäude 2020 (Statistische Gebäudedatei),S5
+dwellings_2020,int,Wohnungen insgesamt 2020,S5
+establishments_2018,int,"Betriebe 2018 (Unternehmensregister, Stand 30.09.2019); Nr 14 incl. Flughafen",S6
+employees_workplace_2018,int,"sv-pflichtig Beschäftigte am Arbeitsort 2018; Nr 14 incl. Flughafen (75,768 at airport)",S6
+shops_osm,int,TO FILL (Niels): count of shop=* features,P1 OSM
+cycle_infra_km_osm,float,TO FILL (Niels): km of cycle infrastructure,P2 OSM
+mean_street_slope_pct,float,TO FILL (Niels): length-weighted mean street slope,P3 HVBG DGM1
+restricted_network_pct,float,TO FILL (Niels): % of street km one-way without bike contraflow,P4 OSM
