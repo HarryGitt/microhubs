@@ -16,6 +16,17 @@ python AlexDarmstadt/niels_pipeline.py \
   --output AlexDarmstadt/niels_output
 ```
 
+If the data processing should run without the optional PNG output, use
+`--skip-figures`. This avoids importing matplotlib during startup and is useful
+when the local Pillow installation has a broken Windows DLL:
+
+```bash
+python AlexDarmstadt/niels_pipeline.py \
+  --dem /path/to/hessen_dgm1.tif \
+  --output AlexDarmstadt/niels_output \
+  --skip-figures
+```
+
 Outputs include `district_indicators.csv`, `coverage_report.csv`, the ±2% boundary check,
 one ranking CSV per weight scenario, `sensitivity.csv`, `top3_stability.csv`,
 and the three slide-ready PNG figures under `figures/`.

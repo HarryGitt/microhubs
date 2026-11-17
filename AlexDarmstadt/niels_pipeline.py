@@ -12,12 +12,12 @@ import argparse
 import json
 import math
 import re
+import sys
 import unicodedata
 from pathlib import Path
 from typing import Iterable
 
 import geopandas as gpd
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import requests
@@ -306,6 +306,37 @@ def join_features(
     return result
 
 
+def add_model_indicators(districts: pd.DataFrame) -> pd.DataFrame:
+    result = districts.copy()
+    area = pd.to_numeric(result["area_km2"], errors="coerce")
+    built_up = (
+        pd.to_numeric(result["residential_area_km2"], errors="coerce")
+        + pd.to_numeric(result["commercial_mixed_area_km2"], errors="coerce")
+        + pd.to_numeric(result["other_builtup_area_km2"], errors="coerce")
+    )
+    result["parcels_proxy_per_km2"] = (
+        pd.to_numeric(result["population_2024"], errors="coerce")
+        * PARCELS_PER_RESIDENT
+        / area
+    )
+    result["households_per_km2"] = pd.to_numeric(result["households_2024"], errors="coerce") / area
+    result["residential_buildings_per_km2"] = (
+        pd.to_numeric(result["residential_buildings_2020"], errors="coerce") / area
+    )
+    result["establishments_per_km2"] = (
+        pd.to_numeric(result["establishments_2018"], errors="coerce") / area
+    )
+    result["shops_per_km2"] = pd.to_numeric(result["shops_osm"], errors="coerce") / area
+    result["hub_suitable_share_pct"] = 100 * (
+        pd.to_numeric(result["commercial_mixed_area_km2"], errors="coerce")
+        + pd.to_numeric(result["other_builtup_area_km2"], errors="coerce")
+    ) / built_up
+    result["cycle_infra_km_per_km2"] = (
+        pd.to_numeric(result["cycle_infra_km_osm"], errors="coerce") / area
+    )
+    return result
+
+
 def coverage_report(
     filled: pd.DataFrame,
     shops: gpd.GeoDataFrame,
@@ -368,6 +399,15 @@ def score(districts: pd.DataFrame, weights: dict[str, float]) -> pd.DataFrame:
 
 
 def make_figures(scored: pd.DataFrame, boundaries: gpd.GeoDataFrame, output: Path) -> None:
+    try:
+        import matplotlib.pyplot as plt
+    except ImportError as error:
+        raise RuntimeError(
+            "The data pipeline completed, but figures could not be created because "
+            "matplotlib/Pillow is not working in this environment. Repair the "
+            "matplotlib and Pillow installation or rerun with --skip-figures."
+        ) from error
+
     output.mkdir(parents=True, exist_ok=True)
     joined = boundaries.merge(scored, on="stadtteil", how="left")
     fig, ax = plt.subplots(figsize=(19.2, 10.8))
@@ -404,6 +444,7 @@ def run(args: argparse.Namespace) -> None:
         raise ValueError("--dem is required for mean_street_slope_pct; no slope value is imputed")
     slopes = district_slopes(streets, boundaries, Path(args.dem))
     filled = join_features(districts, boundaries, shops, cycles, restricted, streets, slopes)
+    filled = add_model_indicators(filled)
     filled.to_csv(output_dir / "district_indicators.csv", index=False)
     coverage_report(filled, shops, cycles, restricted, streets).to_csv(
         output_dir / "coverage_report.csv", index=False
@@ -422,7 +463,11 @@ def run(args: argparse.Namespace) -> None:
     top3 = sensitivity.assign(top3=sensitivity["rank"].le(3)).groupby("stadtteil")["top3"].sum()
     sensitivity.to_csv(output_dir / "sensitivity.csv", index=False)
     top3.sort_values(ascending=False).rename("top3_scenarios").to_csv(output_dir / "top3_stability.csv")
-    make_figures(score(filled, BASELINE), boundaries, output_dir / "figures")
+    if not args.skip_figures:
+        try:
+            make_figures(score(filled, BASELINE), boundaries, output_dir / "figures")
+        except RuntimeError as error:
+            print(f"WARNING: {error}", file=sys.stderr)
 
 
 def main() -> None:
@@ -430,6 +475,11 @@ def main() -> None:
     parser.add_argument("--input", default="AlexDarmstadt/district_indicators_raw.csv")
     parser.add_argument("--output", default="AlexDarmstadt/niels_output")
     parser.add_argument("--dem", help="Local Hessen DGM1 GeoTIFF (required for slope)")
+    parser.add_argument(
+        "--skip-figures",
+        action="store_true",
+        help="Skip PNG creation; useful when matplotlib/Pillow is unavailable",
+    )
     args = parser.parse_args()
     Path(args.output).mkdir(parents=True, exist_ok=True)
     run(args)
