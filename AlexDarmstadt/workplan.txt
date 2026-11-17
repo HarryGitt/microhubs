@@ -1,0 +1,40 @@
+Hi! As we have a presentation in 2 weeks, I made a plan and here is a short overview of who does what and which files to use.
+I gathered some data from some references and made up the plan what to do with this.
+Files in this chat:
+- district_indicators_raw.csv: table with 45 Frankfurt districts and official data (population, households, area, land use, buildings, businesses). Already checked against the city totals.
+- district_indicators_data_dictionary.csv: explains every column and its source.
+- Topic10_HOLM_MicroDepots_Data_Workbook_v2.xlsx: all sources, checks, literature, the scoring model and the presentation plan.
+- download_raw_data.py: downloads the original files from the city websites (only needed to show where the data comes from).
+- Methodology note (formulas, weights, sources): https://claude.ai/artifact/8HVZFXTgjbs5p3dCVfc5Vs
+
+Niels
+What you have: district_indicators_raw.csv, the data dictionary, and the Excel file (sheet Brief_Niels has the details).
+To do:
+1. Get district boundaries from OpenStreetMap (admin_level 10). Merge Flughafen into Sachsenhausen-Sued. Check that the areas match the column area_km2 (within 2 %).
+2. Fill the 4 empty columns in district_indicators_raw.csv: shops_osm, cycle_infra_km_osm, mean_street_slope_pct, restricted_network_pct.
+3. Send the filled CSV back to me. I will put it into the Excel model, which calculates the final ranking.
+4. Run the same scoring in Python as a cross-check, with the 5 weight scenarios (sheet Weights).
+5. Make maps and charts for the slides: score map, the 9 criteria as small maps, a top-10 bar chart.
+6. Prepare the method slide.
+Note: for densities, use area_km2 from the CSV, not the polygon area.
+
+Aynur
+What you have: the Excel file (sheet Literature has all links) and the methodology note.
+To do:
+1. Slides on the problem: why last-mile delivery is a problem, what a micro-depot is, the role of cargo bikes.
+2. Slides on HOLM and their EU project NEXTLOGIC (mobile micro hubs in Frankfurt, first hub at Frankfurt West station) and Frankfurt's logistics strategy.
+3. One slide on impact: why our work matters for HOLM, the city and the climate goals.
+4. Short summaries (half a page each) of Bajec et al. 2023, the HOLM micro-depot campaign report 2021 and the NEXTLOGIC page.
+5. A list of questions for HOLM for our visit on Friday.
+
+Me (Aleksejs)
+Done: official data, sources, checks, scoring model, methodology note.
+To do:
+1. Literature slides (Novotna 2022, Li 2026, Stokkink 2025), the research gap and the data overview.
+2. Put Niels' results into the Excel model and prepare the results slides.
+3. Build the full presentation from all parts, plus the questions for the professors.
+4. Prepare the final package for the professors: slides, Excel with data and charts, Python code, list of sources.
+
+Presentation: 30 min + 15 min Q&A. Structure and timing are in the Excel file, sheet Presentation_Plan. If something is unclear or you want to change your part, just write here.
+
+If you have some ideas or some point to improve please write if everything is ok with this plan😁
