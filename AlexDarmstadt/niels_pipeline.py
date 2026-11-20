@@ -184,6 +184,31 @@ def download_boundaries(
             local = local.rename(columns={name_column: "name"})
         local = local[["name", "geometry"]].copy()
         local["osm_id"] = local.index.map(lambda index: f"local-{index}")
+        airport = local[local["name"].map(normalise_name) == "flughafen"]
+        south = local[local["name"].map(normalise_name).isin(
+            {"sachsenhausensud", "sachsenhausensudinklflughafen"}
+        )]
+        if not airport.empty and not south.empty:
+            merged = unary_union(
+                [south.iloc[0].geometry, airport.iloc[0].geometry]
+            )
+            local = local[
+                ~local["name"].map(normalise_name).isin(
+                    {"flughafen", "sachsenhausensud", "sachsenhausensudinklflughafen"}
+                )
+            ]
+            local = gpd.GeoDataFrame(
+                [
+                    {
+                        "name": "Sachsenhausen-Süd",
+                        "geometry": merged,
+                        "osm_id": "merged-14",
+                    },
+                    *[row for row in local.to_dict("records")],
+                ],
+                crs=PROJECTED_CRS,
+                columns=["name", "geometry", "osm_id"],
+            )
         return local
 
     queries = (

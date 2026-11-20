@@ -53,6 +53,12 @@ python Alex/niels_pipeline.py `
 The GeoJSON/GeoPackage needs a `name`, `NAME`, `stadtteil`, or `Stadtteil`
 column matching the district names. Empty API responses are saved in
 `niels_output/overpass_response.json`.
+For manual Overpass Turbo exports, select **GeoJSON** and use:
+
+```powershell
+python Alex/niels_pipeline.py `
+  --boundaries "C:\Vollstaendiger\Pfad\zur\Datei.geojson"
+```
 Input and output paths are resolved relative to the script file by default, so
 the script works from any PowerShell working directory. Use `--input` and
 `--output` to select explicit paths.
