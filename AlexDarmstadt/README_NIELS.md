@@ -40,6 +40,8 @@ variable is preferable because it avoids placing the key in shell history.
 If the key is set, the pipeline uses the personal endpoint
 `https://api.overpass.ch/v1/<KEY>/interpreter` and also sends `X-API-Key`.
 Do not put quotes around the PowerShell environment-variable value.
+Boundary download first uses the Frankfurt area relation, then a bounded
+Frankfurt fallback query if the first response is empty.
 Input and output paths are resolved relative to the script file by default, so
 the script works from any PowerShell working directory. Use `--input` and
 `--output` to select explicit paths.

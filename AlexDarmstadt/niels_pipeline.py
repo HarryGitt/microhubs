@@ -23,7 +23,7 @@ import numpy as np
 import pandas as pd
 import requests
 from shapely.geometry import LineString, Point, Polygon, shape
-from shapely.ops import unary_union
+from shapely.ops import linemerge, polygonize, unary_union
 
 
 DEFAULT_OVERPASS_URL = "https://api.overpass.ch/v1/interpreter"
@@ -111,28 +111,66 @@ def element_geometry(element: dict):
     if element["type"] == "node":
         return Point(element["lon"], element["lat"])
     points = [(p["lon"], p["lat"]) for p in element.get("geometry", [])]
+    if element["type"] == "way" and len(points) >= 2:
+        return LineString(points)
+    if element["type"] == "relation":
+        outer_lines = []
+        for member in element.get("members", []):
+            if member.get("role") not in ("outer", ""):
+                continue
+            member_points = [
+                (point["lon"], point["lat"])
+                for point in member.get("geometry", [])
+            ]
+            if len(member_points) >= 2:
+                outer_lines.append(LineString(member_points))
+        if not outer_lines:
+            return None
+        merged = linemerge(unary_union(outer_lines))
+        rings = list(merged.geoms) if merged.geom_type == "MultiLineString" else [merged]
+        polygons = list(polygonize(rings))
+        if polygons:
+            return unary_union(polygons)
+        return unary_union(outer_lines)
     if len(points) < 2:
         return None
-    if element["type"] == "way":
-        return LineString(points)
     return Polygon(points) if points[0] == points[-1] and len(points) >= 4 else None
 
 
 def download_boundaries() -> gpd.GeoDataFrame:
-    query = """
-    [out:json][timeout:180];
-    area["boundary"="administrative"]["admin_level"="6"]["name"="Frankfurt am Main"]->.city;
-    rel(area.city)["boundary"="administrative"]["admin_level"="10"];
-    out tags geom;
-    """
+    queries = (
+        """
+        [out:json][timeout:180];
+        area["boundary"="administrative"]["admin_level"="6"]["name"="Frankfurt am Main"]->.city;
+        rel(area.city)["boundary"="administrative"]["admin_level"="10"];
+        out tags geom;
+        """,
+        """
+        [out:json][timeout:180];
+        rel["boundary"="administrative"]["admin_level"="10"]
+          (49.85,8.45,50.25,8.85);
+        out tags geom;
+        """,
+    )
     rows = []
-    for element in overpass(query)["elements"]:
-        geometry = element_geometry(element)
-        name = element.get("tags", {}).get("name")
-        if geometry is not None and name:
-            rows.append({"osm_id": element["id"], "name": name, "geometry": geometry})
+    last_response = None
+    for query in queries:
+        last_response = overpass(query)
+        elements = last_response.get("elements", [])
+        for element in elements:
+            geometry = element_geometry(element)
+            name = element.get("tags", {}).get("name")
+            if geometry is not None and name:
+                rows.append({"osm_id": element["id"], "name": name, "geometry": geometry})
+        if rows:
+            break
     if not rows:
-        raise RuntimeError("Overpass returned no Frankfurt admin_level=10 boundaries")
+        remarks = last_response.get("remark") if isinstance(last_response, dict) else None
+        detail = f" Server remark: {remarks}" if remarks else ""
+        raise RuntimeError(
+            "Overpass returned no usable Frankfurt admin_level=10 boundaries."
+            + detail
+        )
     boundaries = gpd.GeoDataFrame(rows, crs=WGS84).to_crs(PROJECTED_CRS)
 
     airport = boundaries[boundaries["name"].map(normalise_name) == "flughafen"]
