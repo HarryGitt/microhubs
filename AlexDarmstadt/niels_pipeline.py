@@ -26,10 +26,8 @@ from shapely.geometry import LineString, Point, Polygon, shape
 from shapely.ops import unary_union
 
 
-OVERPASS_URL = os.getenv(
-    "OVERPASS_URL",
-    "https://api.overpass.ch/v1/interpreter",
-)
+DEFAULT_OVERPASS_URL = "https://api.overpass.ch/v1/interpreter"
+OVERPASS_URL = os.getenv("OVERPASS_URL")
 PROJECTED_CRS = "EPSG:25832"
 WGS84 = "EPSG:4326"
 PARCELS_PER_RESIDENT = 4_370_000_000 * 0.6 / 83_600_000
@@ -86,13 +84,26 @@ def normalise_name(value: str) -> str:
 def overpass(query: str) -> dict:
     api_key = os.getenv("OVERPASS_KEY")
     headers = {"X-API-Key": api_key} if api_key else {}
-    response = requests.post(
-        OVERPASS_URL,
-        data={"data": query},
-        headers=headers,
-        timeout=180,
-    )
-    response.raise_for_status()
+    url = OVERPASS_URL or DEFAULT_OVERPASS_URL
+    if api_key and not OVERPASS_URL:
+        url = f"https://api.overpass.ch/v1/{api_key}/interpreter"
+    try:
+        response = requests.post(
+            url,
+            data={"data": query},
+            headers=headers,
+            timeout=180,
+        )
+        response.raise_for_status()
+    except requests.HTTPError as error:
+        status = error.response.status_code if error.response is not None else "unknown"
+        if status == 401:
+            raise RuntimeError(
+                "overpass.ch returned 401 Unauthorized. Set a valid key in "
+                "OVERPASS_KEY or pass --overpass-key. Do not set "
+                "OVERPASS_URL unless it is a complete authenticated endpoint."
+            ) from error
+        raise
     return response.json()
 
 

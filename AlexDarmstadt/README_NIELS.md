@@ -37,6 +37,9 @@ python Alex/niels_pipeline.py --dem "C:\Pfad\zu\hessen_dgm1.tif"
 
 The key can also be passed once with `--overpass-key`; using the environment
 variable is preferable because it avoids placing the key in shell history.
+If the key is set, the pipeline uses the personal endpoint
+`https://api.overpass.ch/v1/<KEY>/interpreter` and also sends `X-API-Key`.
+Do not put quotes around the PowerShell environment-variable value.
 Input and output paths are resolved relative to the script file by default, so
 the script works from any PowerShell working directory. Use `--input` and
 `--output` to select explicit paths.
