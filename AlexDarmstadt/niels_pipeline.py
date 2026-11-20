@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import re
 import sys
 import unicodedata
@@ -25,7 +26,10 @@ from shapely.geometry import LineString, Point, Polygon, shape
 from shapely.ops import unary_union
 
 
-OVERPASS_URL = "https://overpass-api.de/api/interpreter"
+OVERPASS_URL = os.getenv(
+    "OVERPASS_URL",
+    "https://api.overpass.ch/v1/interpreter",
+)
 PROJECTED_CRS = "EPSG:25832"
 WGS84 = "EPSG:4326"
 PARCELS_PER_RESIDENT = 4_370_000_000 * 0.6 / 83_600_000
@@ -80,9 +84,12 @@ def normalise_name(value: str) -> str:
 
 
 def overpass(query: str) -> dict:
+    api_key = os.getenv("OVERPASS_KEY")
+    headers = {"X-API-Key": api_key} if api_key else {}
     response = requests.post(
         OVERPASS_URL,
         data={"data": query},
+        headers=headers,
         timeout=180,
     )
     response.raise_for_status()
@@ -480,7 +487,13 @@ def main() -> None:
         action="store_true",
         help="Skip PNG creation; useful when matplotlib/Pillow is unavailable",
     )
+    parser.add_argument(
+        "--overpass-key",
+        help="overpass.ch API key (prefer the OVERPASS_KEY environment variable)",
+    )
     args = parser.parse_args()
+    if args.overpass_key:
+        os.environ["OVERPASS_KEY"] = args.overpass_key
     Path(args.output).mkdir(parents=True, exist_ok=True)
     run(args)
 

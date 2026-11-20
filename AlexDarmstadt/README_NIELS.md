@@ -27,6 +27,17 @@ python AlexDarmstadt/niels_pipeline.py \
   --skip-figures
 ```
 
+The pipeline uses `https://api.overpass.ch/v1/interpreter` and accepts the
+API key through the `OVERPASS_KEY` environment variable. On Windows PowerShell:
+
+```powershell
+$env:OVERPASS_KEY = "YOUR_API_KEY"
+python Alex/niels_pipeline.py --dem "C:\Pfad\zu\hessen_dgm1.tif"
+```
+
+The key can also be passed once with `--overpass-key`; using the environment
+variable is preferable because it avoids placing the key in shell history.
+
 Outputs include `district_indicators.csv`, `coverage_report.csv`, the ±2% boundary check,
 one ranking CSV per weight scenario, `sensitivity.csv`, `top3_stability.csv`,
 and the three slide-ready PNG figures under `figures/`.
