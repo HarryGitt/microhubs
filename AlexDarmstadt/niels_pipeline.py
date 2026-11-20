@@ -107,6 +107,26 @@ def overpass(query: str) -> dict:
     return response.json()
 
 
+def overpass_mirrors(query: str) -> dict:
+    primary = overpass(query)
+    if primary.get("elements"):
+        return primary
+
+    for url in (
+        "https://overpass.kumi.systems/api/interpreter",
+        "https://overpass-api.de/api/interpreter",
+    ):
+        try:
+            response = requests.post(url, data={"data": query}, timeout=180)
+            response.raise_for_status()
+            payload = response.json()
+            if payload.get("elements"):
+                return payload
+        except (requests.RequestException, json.JSONDecodeError):
+            continue
+    return primary
+
+
 def element_geometry(element: dict):
     if element["type"] == "node":
         return Point(element["lon"], element["lat"])
@@ -137,7 +157,35 @@ def element_geometry(element: dict):
     return Polygon(points) if points[0] == points[-1] and len(points) >= 4 else None
 
 
-def download_boundaries() -> gpd.GeoDataFrame:
+def download_boundaries(
+    boundaries_file: str | None = None,
+    diagnostics_file: str | None = None,
+) -> gpd.GeoDataFrame:
+    if boundaries_file:
+        local = gpd.read_file(boundaries_file)
+        if local.crs is None:
+            local = local.set_crs(WGS84)
+        else:
+            local = local.to_crs(WGS84)
+        local = local.to_crs(PROJECTED_CRS)
+        if "name" not in local.columns:
+            name_column = next(
+                (
+                    column
+                    for column in ("NAME", "stadtteil", "Stadtteil", "name")
+                    if column in local.columns
+                ),
+                None,
+            )
+            if name_column is None:
+                raise ValueError(
+                    "Boundary GeoJSON/GeoPackage has no name, NAME, stadtteil or Stadtteil column"
+                )
+            local = local.rename(columns={name_column: "name"})
+        local = local[["name", "geometry"]].copy()
+        local["osm_id"] = local.index.map(lambda index: f"local-{index}")
+        return local
+
     queries = (
         """
         [out:json][timeout:180];
@@ -155,7 +203,7 @@ def download_boundaries() -> gpd.GeoDataFrame:
     rows = []
     last_response = None
     for query in queries:
-        last_response = overpass(query)
+        last_response = overpass_mirrors(query)
         elements = last_response.get("elements", [])
         for element in elements:
             geometry = element_geometry(element)
@@ -165,6 +213,11 @@ def download_boundaries() -> gpd.GeoDataFrame:
         if rows:
             break
     if not rows:
+        if diagnostics_file:
+            Path(diagnostics_file).write_text(
+                json.dumps(last_response, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
         remarks = last_response.get("remark") if isinstance(last_response, dict) else None
         detail = f" Server remark: {remarks}" if remarks else ""
         raise RuntimeError(
@@ -492,8 +545,12 @@ def make_figures(scored: pd.DataFrame, boundaries: gpd.GeoDataFrame, output: Pat
 def run(args: argparse.Namespace) -> None:
     input_path = Path(args.input)
     output_dir = Path(args.output)
+    output_dir.mkdir(parents=True, exist_ok=True)
     districts = pd.read_csv(input_path)
-    boundaries = download_boundaries()
+    boundaries = download_boundaries(
+        boundaries_file=args.boundaries,
+        diagnostics_file=str(output_dir / "overpass_response.json"),
+    )
     validate_areas(boundaries, districts).to_csv(output_dir / "boundary_check.csv", index=False)
     shops, cycles, restricted, streets = download_features()
     if not args.dem:
@@ -548,6 +605,10 @@ def main() -> None:
     parser.add_argument(
         "--overpass-key",
         help="overpass.ch API key (prefer the OVERPASS_KEY environment variable)",
+    )
+    parser.add_argument(
+        "--boundaries",
+        help="Optional local GeoJSON or GeoPackage containing district boundaries",
     )
     args = parser.parse_args()
     if args.overpass_key:
