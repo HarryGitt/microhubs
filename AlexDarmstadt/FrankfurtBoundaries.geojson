@@ -1,0 +1,1697 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-11-20T15:09:20Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "relation/3339222",
+      "properties": {
+        "@id": "relation/3339222",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Fechenheim",
+        "type": "boundary",
+        "wikidata": "Q451611",
+        "wikipedia": "de:Frankfurt-Fechenheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.7399246,
+              50.1078432
+            ],
+            [
+              8.7849123,
+              50.1078432
+            ],
+            [
+              8.7849123,
+              50.1437136
+            ],
+            [
+              8.7399246,
+              50.1437136
+            ],
+            [
+              8.7399246,
+              50.1078432
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3339902",
+      "properties": {
+        "@id": "relation/3339902",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Oberrad",
+        "type": "boundary",
+        "wikidata": "Q314192",
+        "wikipedia": "de:Frankfurt-Oberrad",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.7141724,
+              50.0894871
+            ],
+            [
+              8.7445989,
+              50.0894871
+            ],
+            [
+              8.7445989,
+              50.1084935
+            ],
+            [
+              8.7141724,
+              50.1084935
+            ],
+            [
+              8.7141724,
+              50.0894871
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3342138",
+      "properties": {
+        "@id": "relation/3342138",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Niederursel",
+        "type": "boundary",
+        "wikidata": "Q316073",
+        "wikipedia": "de:Frankfurt-Niederursel",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.5879417,
+              50.1530953
+            ],
+            [
+              8.6523502,
+              50.1530953
+            ],
+            [
+              8.6523502,
+              50.1846172
+            ],
+            [
+              8.5879417,
+              50.1846172
+            ],
+            [
+              8.5879417,
+              50.1530953
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3342353",
+      "properties": {
+        "@id": "relation/3342353",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Heddernheim",
+        "type": "boundary",
+        "wikidata": "Q314062",
+        "wikipedia": "de:Frankfurt-Heddernheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6263745,
+              50.1490523
+            ],
+            [
+              8.6534209,
+              50.1490523
+            ],
+            [
+              8.6534209,
+              50.1676807
+            ],
+            [
+              8.6263745,
+              50.1676807
+            ],
+            [
+              8.6263745,
+              50.1490523
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3342354",
+      "properties": {
+        "@id": "relation/3342354",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Praunheim",
+        "type": "boundary",
+        "wikidata": "Q314881",
+        "wikipedia": "de:Frankfurt-Praunheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.5949932,
+              50.1316766
+            ],
+            [
+              8.6357296,
+              50.1316766
+            ],
+            [
+              8.6357296,
+              50.159954
+            ],
+            [
+              8.5949932,
+              50.159954
+            ],
+            [
+              8.5949932,
+              50.1316766
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3342411",
+      "properties": {
+        "@id": "relation/3342411",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Berkersheim",
+        "type": "boundary",
+        "wikidata": "Q316764",
+        "wikipedia": "de:Frankfurt-Berkersheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6861722,
+              50.1613988
+            ],
+            [
+              8.7230075,
+              50.1613988
+            ],
+            [
+              8.7230075,
+              50.1811568
+            ],
+            [
+              8.6861722,
+              50.1811568
+            ],
+            [
+              8.6861722,
+              50.1613988
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3870359",
+      "properties": {
+        "@id": "relation/3870359",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "description": "Das Gebiet des Stadtteils Sindlingen, der Stadt Frankfurt am Main, ist Teil des Ortsbezirks West.",
+        "name": "Sindlingen",
+        "type": "boundary",
+        "wikidata": "Q462159",
+        "wikimedia_commons": "Category:Frankfurt-Sindlingen",
+        "wikipedia": "de:Frankfurt-Sindlingen",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.494696,
+              50.0617683
+            ],
+            [
+              8.5343625,
+              50.0617683
+            ],
+            [
+              8.5343625,
+              50.1023686
+            ],
+            [
+              8.494696,
+              50.1023686
+            ],
+            [
+              8.494696,
+              50.0617683
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3870360",
+      "properties": {
+        "@id": "relation/3870360",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "description": "Das Gebiet des Stadtteils Zeilsheim, der Stadt Frankfurt am Main, ist Teil des Ortsbezirks West.",
+        "name": "Zeilsheim",
+        "type": "boundary",
+        "wikidata": "Q314065",
+        "wikimedia_commons": "Category:Frankfurt-Zeilsheim",
+        "wikipedia": "de:Frankfurt-Zeilsheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.4727605,
+              50.0844202
+            ],
+            [
+              8.510836,
+              50.0844202
+            ],
+            [
+              8.510836,
+              50.110741
+            ],
+            [
+              8.4727605,
+              50.110741
+            ],
+            [
+              8.4727605,
+              50.0844202
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3870398",
+      "properties": {
+        "@id": "relation/3870398",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Niederrad",
+        "type": "boundary",
+        "wikidata": "Q567307",
+        "wikipedia": "de:Frankfurt-Niederrad",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6126903,
+              50.0691576
+            ],
+            [
+              8.6639636,
+              50.0691576
+            ],
+            [
+              8.6639636,
+              50.0957517
+            ],
+            [
+              8.6126903,
+              50.0957517
+            ],
+            [
+              8.6126903,
+              50.0691576
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3870399",
+      "properties": {
+        "@id": "relation/3870399",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Schwanheim",
+        "type": "boundary",
+        "wikidata": "Q314381",
+        "wikipedia": "de:Frankfurt-Schwanheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.5256844,
+              50.0668458
+            ],
+            [
+              8.6183592,
+              50.0668458
+            ],
+            [
+              8.6183592,
+              50.0993319
+            ],
+            [
+              8.5256844,
+              50.0993319
+            ],
+            [
+              8.5256844,
+              50.0668458
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3891373",
+      "properties": {
+        "@id": "relation/3891373",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Flughafen",
+        "type": "boundary",
+        "wikidata": "Q560737",
+        "wikipedia": "de:Frankfurt-Flughafen",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.516335,
+              50.0153529
+            ],
+            [
+              8.6126903,
+              50.0153529
+            ],
+            [
+              8.6126903,
+              50.0708742
+            ],
+            [
+              8.516335,
+              50.0708742
+            ],
+            [
+              8.516335,
+              50.0153529
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/3891374",
+      "properties": {
+        "@id": "relation/3891374",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Sachsenhausen Nord",
+        "type": "boundary",
+        "wikidata": "Q17483991",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6538978,
+              50.0885172
+            ],
+            [
+              8.7182345,
+              50.0885172
+            ],
+            [
+              8.7182345,
+              50.1085183
+            ],
+            [
+              8.6538978,
+              50.1085183
+            ],
+            [
+              8.6538978,
+              50.0885172
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4097527",
+      "properties": {
+        "@id": "relation/4097527",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Ginnheim",
+        "type": "boundary",
+        "wikidata": "Q314224",
+        "wikipedia": "de:Frankfurt-Ginnheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6319002,
+              50.1361681
+            ],
+            [
+              8.6627686,
+              50.1361681
+            ],
+            [
+              8.6627686,
+              50.1540768
+            ],
+            [
+              8.6319002,
+              50.1540768
+            ],
+            [
+              8.6319002,
+              50.1361681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4172379",
+      "properties": {
+        "@id": "relation/4172379",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Eschersheim",
+        "type": "boundary",
+        "wikidata": "Q450028",
+        "wikipedia": "de:Frankfurt-Eschersheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6460405,
+              50.1479911
+            ],
+            [
+              8.6772374,
+              50.1479911
+            ],
+            [
+              8.6772374,
+              50.174081
+            ],
+            [
+              8.6460405,
+              50.174081
+            ],
+            [
+              8.6460405,
+              50.1479911
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4203666",
+      "properties": {
+        "@id": "relation/4203666",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Dornbusch",
+        "type": "boundary",
+        "wikidata": "Q458068",
+        "wikipedia": "de:Frankfurt-Dornbusch",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6556213,
+              50.1360727
+            ],
+            [
+              8.6848673,
+              50.1360727
+            ],
+            [
+              8.6848673,
+              50.1583724
+            ],
+            [
+              8.6556213,
+              50.1583724
+            ],
+            [
+              8.6556213,
+              50.1360727
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4203667",
+      "properties": {
+        "@id": "relation/4203667",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Frankfurter Berg",
+        "type": "boundary",
+        "wikidata": "Q314811",
+        "wikipedia": "de:Frankfurter Berg",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6546814,
+              50.1618005
+            ],
+            [
+              8.6874824,
+              50.1618005
+            ],
+            [
+              8.6874824,
+              50.1779675
+            ],
+            [
+              8.6546814,
+              50.1779675
+            ],
+            [
+              8.6546814,
+              50.1618005
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206765",
+      "properties": {
+        "@id": "relation/4206765",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Bockenheim",
+        "type": "boundary",
+        "wikidata": "Q516056",
+        "wikipedia": "de:Frankfurt-Bockenheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6006126,
+              50.1054894
+            ],
+            [
+              8.6637336,
+              50.1054894
+            ],
+            [
+              8.6637336,
+              50.1389858
+            ],
+            [
+              8.6006126,
+              50.1389858
+            ],
+            [
+              8.6006126,
+              50.1054894
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206766",
+      "properties": {
+        "@id": "relation/4206766",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Bonames",
+        "type": "boundary",
+        "wikidata": "Q315793",
+        "wikipedia": "de:Frankfurt-Bonames",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6538422,
+              50.1766264
+            ],
+            [
+              8.6787586,
+              50.1766264
+            ],
+            [
+              8.6787586,
+              50.187966
+            ],
+            [
+              8.6538422,
+              50.187966
+            ],
+            [
+              8.6538422,
+              50.1766264
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206767",
+      "properties": {
+        "@id": "relation/4206767",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Bornheim",
+        "type": "boundary",
+        "wikidata": "Q519862",
+        "wikipedia": "de:Frankfurt-Bornheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6982605,
+              50.1217658
+            ],
+            [
+              8.72547,
+              50.1217658
+            ],
+            [
+              8.72547,
+              50.1439968
+            ],
+            [
+              8.6982605,
+              50.1439968
+            ],
+            [
+              8.6982605,
+              50.1217658
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206768",
+      "properties": {
+        "@id": "relation/4206768",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Eckenheim",
+        "type": "boundary",
+        "wikidata": "Q315797",
+        "wikipedia": "de:Frankfurt-Eckenheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6712889,
+              50.138804
+            ],
+            [
+              8.6961295,
+              50.138804
+            ],
+            [
+              8.6961295,
+              50.1640173
+            ],
+            [
+              8.6712889,
+              50.1640173
+            ],
+            [
+              8.6712889,
+              50.138804
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206769",
+      "properties": {
+        "@id": "relation/4206769",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Hausen",
+        "type": "boundary",
+        "wikidata": "Q316510",
+        "wikipedia": "de:Frankfurt-Hausen",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6171856,
+              50.1237545
+            ],
+            [
+              8.6361385,
+              50.1237545
+            ],
+            [
+              8.6361385,
+              50.141106
+            ],
+            [
+              8.6171856,
+              50.141106
+            ],
+            [
+              8.6171856,
+              50.1237545
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206770",
+      "properties": {
+        "@id": "relation/4206770",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Nordend Ost",
+        "type": "boundary",
+        "wikidata": "Q18372695",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6887636,
+              50.1157445
+            ],
+            [
+              8.7063612,
+              50.1157445
+            ],
+            [
+              8.7063612,
+              50.1391582
+            ],
+            [
+              8.6887636,
+              50.1391582
+            ],
+            [
+              8.6887636,
+              50.1157445
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206771",
+      "properties": {
+        "@id": "relation/4206771",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Nordend West",
+        "type": "boundary",
+        "wikidata": "Q17482130",
+        "wikipedia": "pl:Nordend-West",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6714178,
+              50.1178835
+            ],
+            [
+              8.6989368,
+              50.1178835
+            ],
+            [
+              8.6989368,
+              50.1428918
+            ],
+            [
+              8.6714178,
+              50.1428918
+            ],
+            [
+              8.6714178,
+              50.1178835
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206772",
+      "properties": {
+        "@id": "relation/4206772",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Ostend",
+        "type": "boundary",
+        "wikidata": "Q563567",
+        "wikipedia": "de:Frankfurt-Ostend",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6941197,
+              50.1062445
+            ],
+            [
+              8.7479628,
+              50.1062445
+            ],
+            [
+              8.7479628,
+              50.1259127
+            ],
+            [
+              8.6941197,
+              50.1259127
+            ],
+            [
+              8.6941197,
+              50.1062445
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206773",
+      "properties": {
+        "@id": "relation/4206773",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Preungesheim",
+        "type": "boundary",
+        "wikidata": "Q316746",
+        "wikipedia": "de:Frankfurt-Preungesheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6781167,
+              50.1408319
+            ],
+            [
+              8.7128906,
+              50.1408319
+            ],
+            [
+              8.7128906,
+              50.1655863
+            ],
+            [
+              8.6781167,
+              50.1655863
+            ],
+            [
+              8.6781167,
+              50.1408319
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206774",
+      "properties": {
+        "@id": "relation/4206774",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Riederwald",
+        "type": "boundary",
+        "wikidata": "Q316482",
+        "wikipedia": "de:Frankfurt-Riederwald",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.7240919,
+              50.1207001
+            ],
+            [
+              8.7434535,
+              50.1207001
+            ],
+            [
+              8.7434535,
+              50.1319067
+            ],
+            [
+              8.7240919,
+              50.1319067
+            ],
+            [
+              8.7240919,
+              50.1207001
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206775",
+      "properties": {
+        "@id": "relation/4206775",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Rödelheim",
+        "type": "boundary",
+        "wikidata": "Q314187",
+        "wikipedia": "de:Frankfurt-Rödelheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.5808148,
+              50.1154034
+            ],
+            [
+              8.6229546,
+              50.1154034
+            ],
+            [
+              8.6229546,
+              50.1432099
+            ],
+            [
+              8.5808148,
+              50.1432099
+            ],
+            [
+              8.5808148,
+              50.1154034
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206776",
+      "properties": {
+        "@id": "relation/4206776",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Seckbach",
+        "type": "boundary",
+        "wikidata": "Q314890",
+        "wikipedia": "de:Frankfurt-Seckbach",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.7047132,
+              50.1276427
+            ],
+            [
+              8.7479447,
+              50.1276427
+            ],
+            [
+              8.7479447,
+              50.1634759
+            ],
+            [
+              8.7047132,
+              50.1634759
+            ],
+            [
+              8.7047132,
+              50.1276427
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206777",
+      "properties": {
+        "@id": "relation/4206777",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Westend Nord",
+        "type": "boundary",
+        "wikidata": "Q17481593",
+        "wikipedia": "pl:Westend-Nord",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6558043,
+              50.120845
+            ],
+            [
+              8.6757785,
+              50.120845
+            ],
+            [
+              8.6757785,
+              50.1387367
+            ],
+            [
+              8.6558043,
+              50.1387367
+            ],
+            [
+              8.6558043,
+              50.120845
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4206778",
+      "properties": {
+        "@id": "relation/4206778",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Westend Süd",
+        "type": "boundary",
+        "wikidata": "Q17481645",
+        "wikipedia": "pl:Westend-Süd",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6433346,
+              50.1091788
+            ],
+            [
+              8.679059,
+              50.1091788
+            ],
+            [
+              8.679059,
+              50.1266272
+            ],
+            [
+              8.6433346,
+              50.1266272
+            ],
+            [
+              8.6433346,
+              50.1091788
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209934",
+      "properties": {
+        "@id": "relation/4209934",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Altstadt",
+        "type": "boundary",
+        "wikidata": "Q449266",
+        "wikipedia": "de:Frankfurt-Altstadt",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6748666,
+              50.1063904
+            ],
+            [
+              8.6881712,
+              50.1063904
+            ],
+            [
+              8.6881712,
+              50.1147899
+            ],
+            [
+              8.6748666,
+              50.1147899
+            ],
+            [
+              8.6748666,
+              50.1063904
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209935",
+      "properties": {
+        "@id": "relation/4209935",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Bahnhofsviertel",
+        "type": "boundary",
+        "wikidata": "Q451033",
+        "wikipedia": "de:Frankfurt-Bahnhofsviertel",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6605492,
+              50.1024807
+            ],
+            [
+              8.6746727,
+              50.1024807
+            ],
+            [
+              8.6746727,
+              50.1132235
+            ],
+            [
+              8.6605492,
+              50.1132235
+            ],
+            [
+              8.6605492,
+              50.1024807
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209936",
+      "properties": {
+        "@id": "relation/4209936",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Gallus",
+        "type": "boundary",
+        "wikidata": "Q447986",
+        "wikipedia": "de:Frankfurt-Gallus",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6126594,
+              50.0922005
+            ],
+            [
+              8.6653536,
+              50.0922005
+            ],
+            [
+              8.6653536,
+              50.112175
+            ],
+            [
+              8.6126594,
+              50.112175
+            ],
+            [
+              8.6126594,
+              50.0922005
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209937",
+      "properties": {
+        "@id": "relation/4209937",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Griesheim",
+        "type": "boundary",
+        "wikidata": "Q566334",
+        "wikipedia": "de:Frankfurt-Griesheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.575869,
+              50.0886769
+            ],
+            [
+              8.6219131,
+              50.0886769
+            ],
+            [
+              8.6219131,
+              50.1161213
+            ],
+            [
+              8.575869,
+              50.1161213
+            ],
+            [
+              8.575869,
+              50.0886769
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209938",
+      "properties": {
+        "@id": "relation/4209938",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Gutleutviertel",
+        "type": "boundary",
+        "wikidata": "Q314906",
+        "wikipedia": "de:Frankfurt-Gutleutviertel",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6215196,
+              50.0887679
+            ],
+            [
+              8.6693786,
+              50.0887679
+            ],
+            [
+              8.6693786,
+              50.1062034
+            ],
+            [
+              8.6215196,
+              50.1062034
+            ],
+            [
+              8.6215196,
+              50.0887679
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209939",
+      "properties": {
+        "@id": "relation/4209939",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "description": "Das Gebiet des Stadtteils Höchst, der Stadt Frankfurt am Main, ist Teil des Ortsbezirks West.",
+        "name": "Höchst",
+        "type": "boundary",
+        "wikidata": "Q132499",
+        "wikimedia_commons": "Category:Frankfurt-Höchst",
+        "wikipedia": "de:Frankfurt-Höchst",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.5137552,
+              50.0807425
+            ],
+            [
+              8.5667087,
+              50.0807425
+            ],
+            [
+              8.5667087,
+              50.1152628
+            ],
+            [
+              8.5137552,
+              50.1152628
+            ],
+            [
+              8.5137552,
+              50.0807425
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209940",
+      "properties": {
+        "@id": "relation/4209940",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Innenstadt",
+        "type": "boundary",
+        "wikidata": "Q449272",
+        "wikipedia": "de:Frankfurt-Innenstadt",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.6685139,
+              50.1055104
+            ],
+            [
+              8.6957644,
+              50.1055104
+            ],
+            [
+              8.6957644,
+              50.1200637
+            ],
+            [
+              8.6685139,
+              50.1200637
+            ],
+            [
+              8.6685139,
+              50.1055104
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209941",
+      "properties": {
+        "@id": "relation/4209941",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Nied",
+        "type": "boundary",
+        "wikidata": "Q450758",
+        "wikipedia": "de:Frankfurt-Nied",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.5513153,
+              50.0912352
+            ],
+            [
+              8.600221,
+              50.0912352
+            ],
+            [
+              8.600221,
+              50.1142256
+            ],
+            [
+              8.5513153,
+              50.1142256
+            ],
+            [
+              8.5513153,
+              50.0912352
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209942",
+      "properties": {
+        "@id": "relation/4209942",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "name": "Sachsenhausen Süd",
+        "type": "boundary",
+        "wikidata": "Q17484038",
+        "wikipedia": "pl:Sachsenhausen-Süd",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.5984757,
+              50.039114
+            ],
+            [
+              8.7502089,
+              50.039114
+            ],
+            [
+              8.7502089,
+              50.102271
+            ],
+            [
+              8.5984757,
+              50.102271
+            ],
+            [
+              8.5984757,
+              50.039114
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209943",
+      "properties": {
+        "@id": "relation/4209943",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "description": "Das Gebiet des Stadtteils Sossenheim, der Stadt Frankfurt am Main, ist Teil des Ortsbezirks West.",
+        "name": "Sossenheim",
+        "type": "boundary",
+        "wikidata": "Q314754",
+        "wikimedia_commons": "Category:Frankfurt-Sossenheim",
+        "wikipedia": "de:Frankfurt-Sossenheim",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.5512885,
+              50.1086118
+            ],
+            [
+              8.598846,
+              50.1086118
+            ],
+            [
+              8.598846,
+              50.1344079
+            ],
+            [
+              8.5512885,
+              50.1344079
+            ],
+            [
+              8.5512885,
+              50.1086118
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "relation/4209944",
+      "properties": {
+        "@id": "relation/4209944",
+        "admin_level": "10",
+        "boundary": "administrative",
+        "description": "Das Gebiet des Stadtteils Unterliederbach, der Stadt Frankfurt am Main, ist Teil des Ortsbezirks West.",
+        "name": "Unterliederbach",
+        "type": "boundary",
+        "wikidata": "Q313965",
+        "wikimedia_commons": "Category:Frankfurt-Unterliederbach",
+        "wikipedia": "de:Frankfurt-Unterliederbach",
+        "@geometry": "bounds"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.4996363,
+              50.0973339
+            ],
+            [
+              8.5520446,
+              50.0973339
+            ],
+            [
+              8.5520446,
+              50.1224189
+            ],
+            [
+              8.4996363,
+              50.1224189
+            ],
+            [
+              8.4996363,
+              50.0973339
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
