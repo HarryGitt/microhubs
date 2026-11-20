@@ -479,8 +479,17 @@ def run(args: argparse.Namespace) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", default="AlexDarmstadt/district_indicators_raw.csv")
-    parser.add_argument("--output", default="AlexDarmstadt/niels_output")
+    script_directory = Path(__file__).resolve().parent
+    parser.add_argument(
+        "--input",
+        default=str(script_directory / "district_indicators_raw.csv"),
+        help="District indicators CSV (default: beside this script)",
+    )
+    parser.add_argument(
+        "--output",
+        default=str(script_directory / "niels_output"),
+        help="Output directory (default: niels_output beside this script)",
+    )
     parser.add_argument("--dem", help="Local Hessen DGM1 GeoTIFF (required for slope)")
     parser.add_argument(
         "--skip-figures",
